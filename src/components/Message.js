@@ -1,0 +1,9 @@
+import React from 'react';
+
+const Message = ({
+  formValid
+}) => (
+  'form is ' + (formValid ? 'valid' : 'invalid')
+);
+
+export default Message;
