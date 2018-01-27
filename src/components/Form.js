@@ -1,4 +1,5 @@
 import React from 'react';
+import '../styles.css';
 
 export class Form extends React.Component {
 
@@ -73,6 +74,7 @@ export class Form extends React.Component {
     return (
       <div>
         <form>
+          <label>Name: </label>
           <input
             type='text'
             name='nameText'
@@ -80,9 +82,11 @@ export class Form extends React.Component {
             value={this.state.nameText}
             onChange={(e) => this.handleInputChange(e)}
             onBlur={() => this.checkNameValid()}
+            className={this.state.nameValid !== '' && !this.state.nameValid ? 'invalid-input' : ''}
           />
-          <span>{this.state.nameText}</span>
+          <span className='form-helper'>*Required(should have 4 or more characters)</span>
           <br />
+          <label>Email: </label>
           <input
             type='email'
             name='emailText'
@@ -90,9 +94,11 @@ export class Form extends React.Component {
             value={this.state.emailText}
             onChange={(e) => this.handleInputChange(e)}
             onBlur={() => this.checkEmailValid()}
+            className={this.state.emailValid !== '' && !this.state.emailValid ? 'invalid-input' : ''}
           />
-          <span>{this.state.emailText}</span>
+          <span className='form-helper'>*Required(should be a valid email)</span>
           <br />
+          <label>Phone: </label>
           <input
             type='number'
             name='phoneText'
@@ -100,9 +106,11 @@ export class Form extends React.Component {
             value={this.state.phoneText}
             onChange={(e) => this.handleInputChange(e)}
             onBlur={() => this.checkPhoneValid()}
+            className={this.state.phoneValid !== '' && !this.state.phoneValid ? 'invalid-input' : ''}
           />
-          <span>{this.state.phoneText}</span>
+          <span className='form-helper'>*Required(should be a valid telephone number)</span>
           <br />
+          <label>Website: </label>
           <input
             type='url'
             name='urlText'
@@ -110,8 +118,9 @@ export class Form extends React.Component {
             value={this.state.urlText}
             onChange={(e) => this.handleInputChange(e)}
             onBlur={() => this.checkUrlValid()}
+            className={this.state.urlValid !== '' && !this.state.urlValid ? 'invalid-input' : ''}
           />
-          <span>{this.state.urlText}</span>
+          <span className='form-helper'>*Required(should be a valid URL)</span>
           <br />
           <br />
           <input
